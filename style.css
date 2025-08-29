@@ -178,3 +178,4 @@ body{
 .hero__subtitle {
     text-shadow: 0 2px 20px rgba(0,0,0,.35);
 }
+.btn--small { padding: 8px 14px; font-size: 14px; }

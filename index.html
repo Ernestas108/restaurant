@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Restoranas • Skonis, kuris įsimena</title>
     <meta name="description" content="Modernus restoranas: sezoninis meniu, rezervacijos, renginiai." />
+    <!-- Preload ištekliai -->
     <link rel="preload" as="video" href="assets/video/hero.mp4" type="video/mp4">
     <link rel="preload" as="image" href="assets/img/hero-poster.jpg">
     <link rel="stylesheet" href="style.css" />
@@ -21,24 +22,25 @@
         </button>
 
         <nav class="nav" id="nav">
+            <button class="theme-toggle" id="themeToggle" aria-label="Perjungti temą">☀️/🌙</button>
             <a href="#about">Apie</a>
             <a href="#menu">Meniu</a>
             <a href="#gallery">Galerija</a>
             <a href="#contact">Kontaktai</a>
             <a class="btn btn--small" href="#reservation">Rezervacija</a>
+            <!-- Grįžimas į portfolio -->
+            <a class="btn btn--outline btn--small" href="https://ernestas108.github.io/portfolio/">↩︎ Į portfolio</a>
         </nav>
-
-        <!-- Tema jungiklis (visada matomas) -->
-        <button class="theme-toggle" id="themeToggle" aria-label="Perjungti temą">☀️/🌙</button>
     </div>
 </header>
 
-<!-- Hero (šviesus video) -->
+<!-- Hero -->
 <section class="hero" id="hero" aria-label="Hero">
     <video class="hero__video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
         <source src="assets/video/hero.mp4" type="video/mp4" />
         Jūsų naršyklė nepalaiko video.
     </video>
+    <!-- šviesi užsklanda (reguliuojama CSS'e .hero__overlay--light) -->
     <div class="hero__overlay hero__overlay--light"></div>
 
     <div class="container hero__content">
@@ -78,7 +80,7 @@
     </div>
 </section>
 
-<!-- Meniu (su nuotraukomis + filtravimas) -->
+<!-- Meniu -->
 <section class="section section--alt" id="menu">
     <div class="container">
         <h2>Meniu</h2>
@@ -97,25 +99,19 @@
             <article class="dish" data-category="uzkandziai">
                 <img src="assets/img/dishes/caprese.jpg" alt="Caprese salotos" />
                 <div class="dish__body">
-                    <h3>Caprese salotos</h3>
-                    <p>Pomidorai, mocarela, bazilikas, alyvuogių aliejus</p>
-                    <span class="price">10,90 €</span>
+                    <h3>Caprese salotos</h3><p>Pomidorai, mocarela, bazilikas, alyvuogių aliejus</p><span class="price">10,90 €</span>
                 </div>
             </article>
             <article class="dish" data-category="uzkandziai">
                 <img src="assets/img/dishes/burrata.jpg" alt="Burata" />
                 <div class="dish__body">
-                    <h3>Burata</h3>
-                    <p>Sezoninės daržovės, baziliko aliejus</p>
-                    <span class="price">12,90 €</span>
+                    <h3>Burata</h3><p>Sezoninės daržovės, baziliko aliejus</p><span class="price">12,90 €</span>
                 </div>
             </article>
             <article class="dish" data-category="uzkandziai">
                 <img src="assets/img/dishes/soup.jpg" alt="Moliūgų sriuba" />
                 <div class="dish__body">
-                    <h3>Moliūgų sriuba</h3>
-                    <p>Skrudinti moliūgai, moliūgų sėklos, grietinėlė</p>
-                    <span class="price">7,90 €</span>
+                    <h3>Moliūgų sriuba</h3><p>Skrudinti moliūgai, sėklos, grietinėlė</p><span class="price">7,90 €</span>
                 </div>
             </article>
 
@@ -123,25 +119,19 @@
             <article class="dish" data-category="karsti">
                 <img src="assets/img/dishes/salmon.jpg" alt="Grilinta lašiša" />
                 <div class="dish__body">
-                    <h3>Grilinta lašiša</h3>
-                    <p>Žalias padažas, citrina, traškios daržovės</p>
-                    <span class="price">16,90 €</span>
+                    <h3>Grilinta lašiša</h3><p>Žalias padažas, citrina, traškios daržovės</p><span class="price">16,90 €</span>
                 </div>
             </article>
             <article class="dish" data-category="karsti">
                 <img src="assets/img/dishes/steak.jpg" alt="Ribeye steikas" />
                 <div class="dish__body">
-                    <h3>Ribeye steikas</h3>
-                    <p>Juodasis česnakas, pipirų padažas, fri</p>
-                    <span class="price">24,00 €</span>
+                    <h3>Ribeye steikas</h3><p>Juodasis česnakas, pipirų padažas, fri</p><span class="price">24,00 €</span>
                 </div>
             </article>
             <article class="dish" data-category="karsti">
                 <img src="assets/img/dishes/pasta.jpg" alt="Trumų pasta" />
                 <div class="dish__body">
-                    <h3>Trumų pasta</h3>
-                    <p>Sviestas, šalavijai, parmezanas</p>
-                    <span class="price">15,50 €</span>
+                    <h3>Trumų pasta</h3><p>Sviestas, šalavijai, parmezanas</p><span class="price">15,50 €</span>
                 </div>
             </article>
 
@@ -149,25 +139,19 @@
             <article class="dish" data-category="desertai">
                 <img src="assets/img/dishes/tiramisu.jpg" alt="Tiramisu" />
                 <div class="dish__body">
-                    <h3>Tiramisu</h3>
-                    <p>Mascarpone, kava, kakava</p>
-                    <span class="price">7,50 €</span>
+                    <h3>Tiramisu</h3><p>Mascarpone, kava, kakava</p><span class="price">7,50 €</span>
                 </div>
             </article>
             <article class="dish" data-category="desertai">
                 <img src="assets/img/dishes/cheesecake.jpg" alt="Sūrio pyragas" />
                 <div class="dish__body">
-                    <h3>Sūrio pyragas</h3>
-                    <p>Vanilė, pasiflorų padažas, migdolai</p>
-                    <span class="price">7,90 €</span>
+                    <h3>Sūrio pyragas</h3><p>Vanilė, pasiflorų padažas, migdolai</p><span class="price">7,90 €</span>
                 </div>
             </article>
             <article class="dish" data-category="desertai">
                 <img src="assets/img/dishes/lemon.jpg" alt="Citrininis tartsas" />
                 <div class="dish__body">
-                    <h3>Citrininis tartsas</h3>
-                    <p>Itin trapus pagrindas, morengas</p>
-                    <span class="price">6,90 €</span>
+                    <h3>Citrininis tartsas</h3><p>Itin trapus pagrindas, morengas</p><span class="price">6,90 €</span>
                 </div>
             </article>
 
@@ -175,25 +159,19 @@
             <article class="dish" data-category="gerimai">
                 <img src="assets/img/dishes/lemonade.jpg" alt="Naminė citrinada" />
                 <div class="dish__body">
-                    <h3>Naminė citrinada</h3>
-                    <p>Citrinos, medus, mėta</p>
-                    <span class="price">3,90 €</span>
+                    <h3>Naminė citrinada</h3><p>Citrinos, medus, mėta</p><span class="price">3,90 €</span>
                 </div>
             </article>
             <article class="dish" data-category="gerimai">
                 <img src="assets/img/dishes/coffee.jpg" alt="Kava" />
                 <div class="dish__body">
-                    <h3>Kava</h3>
-                    <p>Espresso • Cappuccino • Latte</p>
-                    <span class="price">2,50–3,50 €</span>
+                    <h3>Kava</h3><p>Espresso • Cappuccino • Latte</p><span class="price">2,50–3,50 €</span>
                 </div>
             </article>
             <article class="dish" data-category="gerimai">
                 <img src="assets/img/dishes/wine.jpg" alt="Vynas taurėmis" />
                 <div class="dish__body">
-                    <h3>Vynas taurėmis</h3>
-                    <p>Baltas • Rožinis • Raudonas</p>
-                    <span class="price">nuo 5,50 €</span>
+                    <h3>Vynas taurėmis</h3><p>Baltas • Rožinis • Raudonas</p><span class="price">nuo 5,50 €</span>
                 </div>
             </article>
         </div>
@@ -222,28 +200,15 @@
             <h2>Rezervacija</h2>
             <p>Užpildykite formą – patvirtinsime el. paštu arba telefonu.</p>
             <form class="form" action="https://formspree.io/f/your-id" method="POST">
-                <label>
-                    Vardas
-                    <input type="text" name="name" required />
-                </label>
-                <label>
-                    El. paštas
-                    <input type="email" name="email" required />
-                </label>
-                <label>
-                    Telefonas
-                    <input type="tel" name="phone" inputmode="tel" pattern="[\d+\s\-()]{6,}" required />
-                </label>
+                <label>Vardas<input type="text" name="name" required /></label>
+                <label>El. paštas<input type="email" name="email" required /></label>
+                <label>Telefonas<input type="tel" name="phone" inputmode="tel" pattern="[\d+\s\-()]{6,}" required /></label>
                 <label class="grid grid--2">
-                    <span>Data</span>
-                    <span>Laikas</span>
+                    <span>Data</span><span>Laikas</span>
                     <input type="date" name="date" required />
                     <input type="time" name="time" required />
                 </label>
-                <label>
-                    Žinutė (pasirinktinai)
-                    <textarea name="message" rows="4" placeholder="Pageidavimai, alergijos, proga…"></textarea>
-                </label>
+                <label>Žinutė (pasirinktinai)<textarea name="message" rows="4" placeholder="Pageidavimai, alergijos, proga…"></textarea></label>
                 <button class="btn" type="submit">Siųsti užklausą</button>
             </form>
         </div>
