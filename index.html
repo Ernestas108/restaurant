@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="lt">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Restoranas • Skonis, kuris įsimena</title>
+    <meta name="description" content="Modernus restoranas: sezoninis meniu, rezervacijos, renginiai." />
+    <link rel="preload" as="video" href="assets/video/hero.mp4" type="video/mp4">
+    <link rel="preload" as="image" href="assets/img/hero-poster.jpg">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Header -->
+<header class="header" id="header">
+    <div class="container header__inner">
+        <a class="logo" href="#hero">Restoranas</a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Meniu">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav class="nav" id="nav">
+            <a href="#about">Apie</a>
+            <a href="#menu">Meniu</a>
+            <a href="#gallery">Galerija</a>
+            <a href="#contact">Kontaktai</a>
+            <a class="btn btn--small" href="#reservation">Rezervacija</a>
+        </nav>
+
+        <!-- Tema jungiklis (visada matomas) -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Perjungti temą">☀️/🌙</button>
+    </div>
+</header>
+
+<!-- Hero (šviesus video) -->
+<section class="hero" id="hero" aria-label="Hero">
+    <video class="hero__video" autoplay muted loop playsinline poster="assets/img/hero-poster.jpg">
+        <source src="assets/video/hero.mp4" type="video/mp4" />
+        Jūsų naršyklė nepalaiko video.
+    </video>
+    <div class="hero__overlay hero__overlay--light"></div>
+
+    <div class="container hero__content">
+        <h1 class="hero__title">Skonis, kuris įsimena</h1>
+        <p class="hero__subtitle">Sezoninis meniu, kruopščiai parinkti gėrimai ir šiltas aptarnavimas.</p>
+        <div class="hero__cta">
+            <a class="btn" href="#reservation">Rezervuoti stalą</a>
+            <a class="btn btn--outline" href="#menu">Peržiūrėti meniu</a>
+        </div>
+    </div>
+</section>
+
+<!-- Apie -->
+<section class="section" id="about">
+    <div class="container grid grid--2">
+        <div>
+            <h2>Apie mus</h2>
+            <p>
+                Dirbame su vietiniais tiekėjais ir sezoninėmis gėrybėmis. Virtuvėje – ugnis, dūmas ir technikos
+                tik tiek, kiek reikia skonio išgryninimui.
+            </p>
+            <ul class="bullets">
+                <li>Sezoninis meniu</li>
+                <li>Natūralūs gėrimai</li>
+                <li>Privatūs renginiai</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Darbo valandos</h3>
+            <p>I–IV: 12:00–22:00</p>
+            <p>V–VI: 12:00–23:00</p>
+            <p>VII: 12:00–20:00</p>
+            <div class="mt-16">
+                <a class="btn btn--small" href="#reservation">Rezervuoti</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Meniu (su nuotraukomis + filtravimas) -->
+<section class="section section--alt" id="menu">
+    <div class="container">
+        <h2>Meniu</h2>
+        <p class="section__lead">Trumpas sezono skonių rinkinys. Pasirink filtrą:</p>
+
+        <div class="filters" id="filters">
+            <button class="chip is-active" data-filter="all">Visi</button>
+            <button class="chip" data-filter="uzkandziai">Užkandžiai</button>
+            <button class="chip" data-filter="karsti">Karšti</button>
+            <button class="chip" data-filter="desertai">Desertai</button>
+            <button class="chip" data-filter="gerimai">Gėrimai</button>
+        </div>
+
+        <div class="cards grid grid--3" id="menuGrid">
+            <!-- Užkandžiai -->
+            <article class="dish" data-category="uzkandziai">
+                <img src="assets/img/dishes/caprese.jpg" alt="Caprese salotos" />
+                <div class="dish__body">
+                    <h3>Caprese salotos</h3>
+                    <p>Pomidorai, mocarela, bazilikas, alyvuogių aliejus</p>
+                    <span class="price">10,90 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="uzkandziai">
+                <img src="assets/img/dishes/burrata.jpg" alt="Burata" />
+                <div class="dish__body">
+                    <h3>Burata</h3>
+                    <p>Sezoninės daržovės, baziliko aliejus</p>
+                    <span class="price">12,90 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="uzkandziai">
+                <img src="assets/img/dishes/soup.jpg" alt="Moliūgų sriuba" />
+                <div class="dish__body">
+                    <h3>Moliūgų sriuba</h3>
+                    <p>Skrudinti moliūgai, moliūgų sėklos, grietinėlė</p>
+                    <span class="price">7,90 €</span>
+                </div>
+            </article>
+
+            <!-- Karšti -->
+            <article class="dish" data-category="karsti">
+                <img src="assets/img/dishes/salmon.jpg" alt="Grilinta lašiša" />
+                <div class="dish__body">
+                    <h3>Grilinta lašiša</h3>
+                    <p>Žalias padažas, citrina, traškios daržovės</p>
+                    <span class="price">16,90 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="karsti">
+                <img src="assets/img/dishes/steak.jpg" alt="Ribeye steikas" />
+                <div class="dish__body">
+                    <h3>Ribeye steikas</h3>
+                    <p>Juodasis česnakas, pipirų padažas, fri</p>
+                    <span class="price">24,00 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="karsti">
+                <img src="assets/img/dishes/pasta.jpg" alt="Trumų pasta" />
+                <div class="dish__body">
+                    <h3>Trumų pasta</h3>
+                    <p>Sviestas, šalavijai, parmezanas</p>
+                    <span class="price">15,50 €</span>
+                </div>
+            </article>
+
+            <!-- Desertai -->
+            <article class="dish" data-category="desertai">
+                <img src="assets/img/dishes/tiramisu.jpg" alt="Tiramisu" />
+                <div class="dish__body">
+                    <h3>Tiramisu</h3>
+                    <p>Mascarpone, kava, kakava</p>
+                    <span class="price">7,50 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="desertai">
+                <img src="assets/img/dishes/cheesecake.jpg" alt="Sūrio pyragas" />
+                <div class="dish__body">
+                    <h3>Sūrio pyragas</h3>
+                    <p>Vanilė, pasiflorų padažas, migdolai</p>
+                    <span class="price">7,90 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="desertai">
+                <img src="assets/img/dishes/lemon.jpg" alt="Citrininis tartsas" />
+                <div class="dish__body">
+                    <h3>Citrininis tartsas</h3>
+                    <p>Itin trapus pagrindas, morengas</p>
+                    <span class="price">6,90 €</span>
+                </div>
+            </article>
+
+            <!-- Gėrimai -->
+            <article class="dish" data-category="gerimai">
+                <img src="assets/img/dishes/lemonade.jpg" alt="Naminė citrinada" />
+                <div class="dish__body">
+                    <h3>Naminė citrinada</h3>
+                    <p>Citrinos, medus, mėta</p>
+                    <span class="price">3,90 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="gerimai">
+                <img src="assets/img/dishes/coffee.jpg" alt="Kava" />
+                <div class="dish__body">
+                    <h3>Kava</h3>
+                    <p>Espresso • Cappuccino • Latte</p>
+                    <span class="price">2,50–3,50 €</span>
+                </div>
+            </article>
+            <article class="dish" data-category="gerimai">
+                <img src="assets/img/dishes/wine.jpg" alt="Vynas taurėmis" />
+                <div class="dish__body">
+                    <h3>Vynas taurėmis</h3>
+                    <p>Baltas • Rožinis • Raudonas</p>
+                    <span class="price">nuo 5,50 €</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- Galerija -->
+<section class="section" id="gallery">
+    <div class="container">
+        <h2>Galerija</h2>
+        <div class="gallery grid grid--3">
+            <img class="reveal" src="assets/img/gal-1.jpg" alt="Patiekalas 1" />
+            <img class="reveal" src="assets/img/gal-2.jpg" alt="Patiekalas 2" />
+            <img class="reveal" src="assets/img/gal-3.jpg" alt="Patiekalas 3" />
+            <img class="reveal" src="assets/img/gal-4.jpg" alt="Interjeras 1" />
+            <img class="reveal" src="assets/img/gal-5.jpg" alt="Interjeras 2" />
+            <img class="reveal" src="assets/img/gal-6.jpg" alt="Interjeras 3" />
+        </div>
+    </div>
+</section>
+
+<!-- Rezervacija / Kontaktai -->
+<section class="section section--alt" id="reservation">
+    <div class="container grid grid--2">
+        <div>
+            <h2>Rezervacija</h2>
+            <p>Užpildykite formą – patvirtinsime el. paštu arba telefonu.</p>
+            <form class="form" action="https://formspree.io/f/your-id" method="POST">
+                <label>
+                    Vardas
+                    <input type="text" name="name" required />
+                </label>
+                <label>
+                    El. paštas
+                    <input type="email" name="email" required />
+                </label>
+                <label>
+                    Telefonas
+                    <input type="tel" name="phone" inputmode="tel" pattern="[\d+\s\-()]{6,}" required />
+                </label>
+                <label class="grid grid--2">
+                    <span>Data</span>
+                    <span>Laikas</span>
+                    <input type="date" name="date" required />
+                    <input type="time" name="time" required />
+                </label>
+                <label>
+                    Žinutė (pasirinktinai)
+                    <textarea name="message" rows="4" placeholder="Pageidavimai, alergijos, proga…"></textarea>
+                </label>
+                <button class="btn" type="submit">Siųsti užklausą</button>
+            </form>
+        </div>
+        <div class="card">
+            <h3>Kontaktai</h3>
+            <p><strong>Telefonas:</strong> <a data-phone href="#">+370 600 12345</a></p>
+            <p><strong>El. paštas:</strong> <a data-email href="#">info@restoranas.lt</a></p>
+            <p><strong>Adresas:</strong> <span data-address>Vilniaus g. 10, Vilnius</span></p>
+            <div class="mt-16">
+                <a class="btn btn--small" data-map target="_blank" rel="noopener">Rasti žemėlapyje</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer" id="contact">
+    <div class="container footer__inner">
+        <p>© <span id="year"></span> Restoranas. Visos teisės saugomos.</p>
+        <div class="footer__links">
+            <a data-phone href="#">Skambinti</a>
+            <a data-email href="#">Rašyti</a>
+            <a href="#hero">Į viršų ↑</a>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
